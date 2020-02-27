@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed Up</title>
+    <link rel="stylesheet" href="./src/gameStyle.css" />
+    <script src="./src/data.js" type="module"></script>
+  </head>
+
+  <body>
+    <div class="flex-container">
+      <div class="top">
+        <h1>It's a <span id="length"> green color</span> letter word</h1>
+        <h1 style="display:none"><span id="timer"></span>s</h1>
+      </div>
+      <div class="center">
+        <h1 id="question">Your word is</h1>
+      </div>
+      <div class="bottom">
+        <div class="hints" style="display:none">
+          <p>hint 1</p>
+          <p>hint 2</p>
+        </div>
+        <input type="text" name="answer" id="answer" autofocus />
+        <h1>Score : <span id="score"> 0 </span></h1>
+      </div>
+    </div>
+    <audio src="./assets/correct1.mp3" id="correct"></audio>
+    <audio src="./assets/incorrect.mp3" id="incorrect"></audio>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier Prime";
+}
+
+.top,
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.top h1 span,
+#timer {
+  color: green;
+  font-size: 100px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: aquamarine;
+}
+
+.center #question {
+  border: 7px solid rgb(104, 104, 104);
+  padding: 20px 150px;
+  border-radius: 50px;
+  font-size: 4.5em;
+}
+
+input {
+  font-family: "Courier Prime";
+  width: 30%;
+  padding: 10px;
+  font-size: 5em;
+  font-weight: 700;
+  text-align: center;
+  border: 0;
+  outline: none;
+  border-bottom: 5px solid rgb(57, 54, 202);
+  -webkit-transition: width 0.75s ease-in-out;
+  transition: width 0.75s ease-in-out;
+}
+
+input:focus,
+input:active {
+  width: 50%;
+  border-color: transparent;
+  border-bottom: 5px solid rgb(57, 54, 202);
+}
