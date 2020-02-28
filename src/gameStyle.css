@@ -58,3 +58,36 @@ input:active {
   border-color: transparent;
   border-bottom: 5px solid rgb(57, 54, 202);
 }
+
+#resultDiv {
+  background-color: antiquewhite;
+  position: relative;
+  margin: -495px 0 0 430px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3em;
+  width: 900px;
+  height: 300px;
+  transition: 2s;
+
+}
+
+#close {
+  cursor: pointer;
+}
+
+.play a {
+  text-decoration: none;
+  border: 3px solid black;
+  display: inline-block;
+  padding: 5px 10px;
+  color: aqua;
+  border-radius: 50px;
+  transition: 2s;
+
+}
+
+.play a:hover {
+  background-color: black;
+}

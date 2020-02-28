@@ -107,7 +107,7 @@ function countUp() {
 }
 
 //function for timer
-var start = 6;
+var start = 60;
 var time = document.getElementById("timer");
 time.innerHTML = start;
 var interval = setInterval(() => {
@@ -118,8 +118,13 @@ function timer() {
   if (start > 0) {
     start -= 1;
     time.innerHTML = start;
+    return start;
+  } else {
+    return 0;
   }
 }
+
+var x = timer();
 // function time(word) {
 //   var time = document.getElementById("timer");
 //   var start = word.length * 3;
@@ -196,7 +201,7 @@ function actions() {
   function validate() {
     let answer = document.getElementById("answer");
     console.log(answer.value.length);
-    if (time.innerHTML > 0 && answer.value == mainWord) {
+    if (answer.value == mainWord) {
       correct.play();
       scoreUp();
       answer.value = "";
@@ -207,9 +212,19 @@ function actions() {
         levelup();
         countReset();
       }
-      answer.setAttribute("disabled", "disabled");
+
       actions();
-    } else {
+    }
+    // Result
+    if (start == 0) {
+      answer.setAttribute("disabled", "disabled");
+      result.innerHTML = score.innerHTML;
+      document.getElementById("resultDiv").style.display = "block";
     }
   }
+}
+// popup menu
+document.getElementById("close").addEventListener("click", close);
+function close() {
+  document.getElementById("resultDiv").style.display = "none";
 }
