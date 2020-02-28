@@ -21,15 +21,23 @@ var insects =
 var animals =
   "pig turkey chicken donkey goat horse hen duck rabbit sheep cow cat dog mouse deer wolf lion tiger bear crocodile rabbit";
 var seasons = "spring, summer, autumn, winter";
-var countries = "Australia Austria Bangladesh Belgium Bhutan Brazil Canada China Denmark Egypt France Germany Pakistan Philippines Panama Nepal Malaysia Kenya Iraq Iran India Qatar Spain Sudan Syria";
-var random1 = "overflow underflow undefined determined determination doctor brother understand earthquakes educational effectively environment enhancement observation radiobiology fulfillments reevaluation reduplicated redirecting feasibility achievability fruitfulness reinstalling relativistic relationship repetitively representing repositories repositories classification categorization electrotherapy electrostatics extraordinaire essentialities xeroradiography conceptualization counteraggression counterdemonstrate counterintuitively impartialities illiberalities facilitative objectifies objectively observatory experience programme reinforcement passengers ultrasonic ultrasound visualized vaporizing";
+var countries =
+  "Australia Austria Bangladesh Belgium Bhutan Brazil Canada China Denmark Egypt France Germany Pakistan Philippines Panama Nepal Malaysia Kenya Iraq Iran India Qatar Spain Sudan Syria";
+var random1 =
+  "overflow underflow undefined determined determination doctor brother understand earthquakes educational effectively environment enhancement observation radiobiology fulfillments reevaluation reduplicated redirecting feasibility achievability fruitfulness reinstalling relativistic relationship repetitively representing repositories repositories classification categorization electrotherapy electrostatics extraordinaire essentialities xeroradiography conceptualization counteraggression counterdemonstrate counterintuitively impartialities illiberalities facilitative objectifies objectively observatory experience programme reinforcement passengers ultrasonic ultrasound visualized vaporizing";
 
-var random2 = "abolished backbones backbone blackboard backslash cabdriver capstone accidents according capsuling validities validation variations vaporizers visualises ultrasmart unaccepted unacademic objectified facilitation featherbrain faithfulness  decentralized decomposition cabinetmaking carbohydrates cancellations circumstances clarification cleanlinesses determination diagnostician egocentrically electrofishing electronically Unscramble";
-var random3 = "illegitimately immutabilities industrialised infusibilities legislatorships liberalizations latensification literalizations logarithmically vascularization videoconference vulnerabilities volatilizations viscoelasticity saponification semidocumentary sensationalism sensationalist semilogarithmic supernaturalism superstimulated suppressibility survivability synchronisation systematization quasicrystalline quasiperiodicity quadruplications xeroradiographies";
-var random4 = "cardiorespiratory characterological commercialization counterblockading counterproductive dehydrochlorinate differentiability decriminalization ferrimagnetically fractionalization ultraconservatism uncontrollability unconventionality weatherproofnesses agammaglobulinemia astrophotographies astrophotographers anticounterfeiting antiadministration anthropocentricity aerothermodynamics bourgeoisification biodegradabilities conceptualization ";
-var random5 = "any arc are ape ago add act mac man max mat lace lack lady last late loud leaf scout sleep shelf self jaguar jail jailor jasmin begin better behalf aware wait water juice milk meat team state shelter shadow zebra backup bangles tomato ability disability mix mud cap capability capable capacity capital captain capture champion championship chance change comedy comfort comfortable command commander comment commercial commission commit commitment committee defendant defense defensive deficit define definitely definition degree delay deliver egg eight either elderly elect election electric electricity electronic element elementary eliminate elite elsewhere few fewer fiber fiction field fifteen";
-var random6 = "fifth fifty fight fighter fighting gaze gear gender gene general generally generate generation genetic gentleman headquarters health healthy hear hearing heart heat heaven heavily heavy heel indeed independence independent index iron Islamic island kick kid kill killer killing kind king kiss kitchen knee knife knock know knowledge lab laugh launch law lawn motivation motor mount mountain mouse mouth move negotiation neighbor neighborhood neither nerve nervous net network never news once one ongoing onion online only onto open opening operate operating operation operator opinion olympic pet phase phenomenon philosophy phone photo photograph photographer phrase prepare prescription presence";
-var random7 = "present presentation preserve raw reach react reaction rope rose rough roughly round route routine she sheet shelf shell shelter specific specifically speech station statistics status stuff stupid style subject submit subsequent tent term thought thousand threat tour tourist tournament type typical typically ugly ultimate ultimately unable useful user usual usually utility vacation valley valuable value variable volunteer vote voter vs vulnerable wage wait wake walk wall wander war white who whole yes yesterday yet yield you young your yours yourself youth zone";
+var random2 =
+  "abolished backbones backbone blackboard backslash cabdriver capstone accidents according capsuling validities validation variations vaporizers visualises ultrasmart unaccepted unacademic objectified facilitation featherbrain faithfulness  decentralized decomposition cabinetmaking carbohydrates cancellations circumstances clarification cleanlinesses determination diagnostician egocentrically electrofishing electronically Unscramble";
+var random3 =
+  "illegitimately immutabilities industrialised infusibilities legislatorships liberalizations latensification literalizations logarithmically vascularization videoconference vulnerabilities volatilizations viscoelasticity saponification semidocumentary sensationalism sensationalist semilogarithmic supernaturalism superstimulated suppressibility survivability synchronisation systematization quasicrystalline quasiperiodicity quadruplications xeroradiographies";
+var random4 =
+  "cardiorespiratory characterological commercialization counterblockading counterproductive dehydrochlorinate differentiability decriminalization ferrimagnetically fractionalization ultraconservatism uncontrollability unconventionality weatherproofnesses agammaglobulinemia astrophotographies astrophotographers anticounterfeiting antiadministration anthropocentricity aerothermodynamics bourgeoisification biodegradabilities conceptualization ";
+var random5 =
+  "any arc are ape ago add act mac man max mat lace lack lady last late loud leaf scout sleep shelf self jaguar jail jailor jasmin begin better behalf aware wait water juice milk meat team state shelter shadow zebra backup bangles tomato ability disability mix mud cap capability capable capacity capital captain capture champion championship chance change comedy comfort comfortable command commander comment commercial commission commit commitment committee defendant defense defensive deficit define definitely definition degree delay deliver egg eight either elderly elect election electric electricity electronic element elementary eliminate elite elsewhere few fewer fiber fiction field fifteen";
+var random6 =
+  "fifth fifty fight fighter fighting gaze gear gender gene general generally generate generation genetic gentleman headquarters health healthy hear hearing heart heat heaven heavily heavy heel indeed independence independent index iron Islamic island kick kid kill killer killing kind king kiss kitchen knee knife knock know knowledge lab laugh launch law lawn motivation motor mount mountain mouse mouth move negotiation neighbor neighborhood neither nerve nervous net network never news once one ongoing onion online only onto open opening operate operating operation operator opinion olympic pet phase phenomenon philosophy phone photo photograph photographer phrase prepare prescription presence";
+var random7 =
+  "present presentation preserve raw reach react reaction rope rose rough roughly round route routine she sheet shelf shell shelter specific specifically speech station statistics status stuff stupid style subject submit subsequent tent term thought thousand threat tour tourist tournament type typical typically ugly ultimate ultimately unable useful user usual usually utility vacation valley valuable value variable volunteer vote voter vs vulnerable wage wait wake walk wall wander war white who whole yes yesterday yet yield you young your yours yourself youth zone";
 
 function cleaningData(data) {
   data = data.toLowerCase();
@@ -98,6 +106,39 @@ function countUp() {
   ++count;
 }
 
+//function for timer
+var start = 60;
+var time = document.getElementById("timer");
+time.innerHTML = start;
+var interval = setInterval(() => {
+  timer();
+}, 1000);
+
+function timer() {
+  if (start > 0) {
+    start -= 1;
+    time.innerHTML = start;
+  }
+}
+// function time(word) {
+//   var time = document.getElementById("timer");
+//   var start = word.length * 3;
+//   time.innerHTML = start;
+// }
+// var time = document.getElementById("timer");
+// var interval = setInterval(() => {
+//   timer();
+// }, 1000);
+
+// function timer() {
+//   if (start > 0) {
+//     start -= 1;
+//     time.innerHTML = start;
+//   } else {
+//     clearInterval(interval);
+//   }
+// }
+
 // generating random word
 
 // var mainWord = randomWord(data, level);
@@ -128,12 +169,13 @@ actions();
 function actions() {
   var mainWord = randomWord(data, level);
   console.log(mainWord);
-  time(mainWord);
+  // time(mainWord);
   var mainWordArray = mainWord.split("");
   var mainWordArrayShuffled = shuffleArray(mainWordArray);
   var shuffledWord = mainWordArrayShuffled.join("");
   var length = mainWord.length;
-
+  var hint1 = mainWord.substr(0, mainWord.length / 2 / 2);
+  var hint2 = mainWord.substr(0, mainWord.length / 2);
   var wordLength = document.getElementById("length");
   wordLength.innerHTML = length;
 
@@ -154,38 +196,18 @@ function actions() {
   function validate() {
     let answer = document.getElementById("answer");
     console.log(answer.value.length);
-    if ( /*time.value > 0 && */ answer.value == mainWord) {
+    if (/*time.value > 0 && */ answer.value == mainWord) {
       correct.play();
       scoreUp();
       answer.value = "";
       score.innerHTML = s;
 
-      if (count < 5) countUp();
+      if (count < 6) countUp();
       else {
         levelup();
         countReset();
       }
-      actions();
-    }
-  }
-
-  //function for timer
-
-  function time(word) {
-    var time = document.getElementById("timer");
-    var start = word.length * 3;
-    time.innerHTML = start;
-    var interval = setInterval(() => {
-      timer();
-    }, 1000);
-
-    function timer() {
-      if (start > 0) {
-        start -= 1;
-        time.innerHTML = start;
-      } else {
-        clearInterval(interval);
-      }
+      if (time.innerHTML > 0) actions();
     }
   }
 }
