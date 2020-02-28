@@ -6,7 +6,7 @@ var fruits =
 // fruits = fruits.split(" "); //string to array
 
 var fooditem =
-  "Biryani, Dosa, Butter chicken/Butter paneer, Tandoori meats, vegetables and bread, Samosa, Chaat, DaalMakhni, upma idli chapathi poori vada";
+  "vegetables, chicken, Hamburger, pizza, Biscuits , Barbecue, cuisine, ";
 // fooditem = fooditem.toLowerCase();
 // fooditem = fooditem.replace(/[^a-zA-Z ]/g, "");
 // fooditem = fooditem.split(" ");
@@ -19,7 +19,18 @@ var vehicles =
 var insects =
   "Fly Grasshopper Ant Bee Beetle Butterfly Bug Caterpillar Centipede Cockroach Cricket Dragonfly Mosquito Snail";
 var animals =
-  "pig turkey chicken donkey goat horse hen duck rabbit sheep cow cat dog mouse deer wolf";
+  "pig turkey chicken donkey goat horse hen duck rabbit sheep cow cat dog mouse deer wolf lion tiger bear crocodile rabbit";
+var seasons = "spring, summer, autumn, winter";
+var countries = "Australia Austria Bangladesh Belgium Bhutan Brazil Canada China Denmark Egypt France Germany Pakistan Philippines Panama Nepal Malaysia Kenya Iraq Iran India Qatar Spain Sudan Syria";
+var random1 = "overflow underflow undefined determined determination doctor brother understand earthquakes educational effectively environment enhancement observation radiobiology fulfillments reevaluation reduplicated redirecting feasibility achievability fruitfulness reinstalling relativistic relationship repetitively representing repositories repositories classification categorization electrotherapy electrostatics extraordinaire essentialities xeroradiography conceptualization counteraggression counterdemonstrate counterintuitively impartialities illiberalities facilitative objectifies objectively observatory experience programme reinforcement passengers ultrasonic ultrasound visualized vaporizing";
+
+var random2 = "abolished backbones backbone blackboard backslash cabdriver capstone accidents according capsuling validities validation variations vaporizers visualises ultrasmart unaccepted unacademic objectified facilitation featherbrain faithfulness  decentralized decomposition cabinetmaking carbohydrates cancellations circumstances clarification cleanlinesses determination diagnostician egocentrically electrofishing electronically Unscramble";
+var random3 = "illegitimately immutabilities industrialised infusibilities legislatorships liberalizations latensification literalizations logarithmically vascularization videoconference vulnerabilities volatilizations viscoelasticity saponification semidocumentary sensationalism sensationalist semilogarithmic supernaturalism superstimulated suppressibility survivability synchronisation systematization quasicrystalline quasiperiodicity quadruplications xeroradiographies";
+var random4 = "cardiorespiratory characterological commercialization counterblockading counterproductive dehydrochlorinate differentiability decriminalization ferrimagnetically fractionalization ultraconservatism uncontrollability unconventionality weatherproofnesses agammaglobulinemia astrophotographies astrophotographers anticounterfeiting antiadministration anthropocentricity aerothermodynamics bourgeoisification biodegradabilities conceptualization ";
+var random5 = "any arc are ape ago add act mac man max mat lace lack lady last late loud leaf scout sleep shelf self jaguar jail jailor jasmin begin better behalf aware wait water juice milk meat team state shelter shadow zebra backup bangles tomato ability disability mix mud cap capability capable capacity capital captain capture champion championship chance change comedy comfort comfortable command commander comment commercial commission commit commitment committee defendant defense defensive deficit define definitely definition degree delay deliver egg eight either elderly elect election electric electricity electronic element elementary eliminate elite elsewhere few fewer fiber fiction field fifteen";
+var random6 = "fifth fifty fight fighter fighting gaze gear gender gene general generally generate generation genetic gentleman headquarters health healthy hear hearing heart heat heaven heavily heavy heel indeed independence independent index iron Islamic island kick kid kill killer killing kind king kiss kitchen knee knife knock know knowledge lab laugh launch law lawn motivation motor mount mountain mouse mouth move negotiation neighbor neighborhood neither nerve nervous net network never news once one ongoing onion online only onto open opening operate operating operation operator opinion olympic pet phase phenomenon philosophy phone photo photograph photographer phrase prepare prescription presence";
+var random7 = "present presentation preserve raw reach react reaction rope rose rough roughly round route routine she sheet shelf shell shelter specific specifically speech station statistics status stuff stupid style subject submit subsequent tent term thought thousand threat tour tourist tournament type typical typically ugly ultimate ultimately unable useful user usual usually utility vacation valley valuable value variable volunteer vote voter vs vulnerable wage wait wake walk wall wander war white who whole yes yesterday yet yield you young your yours yourself youth zone";
+
 function cleaningData(data) {
   data = data.toLowerCase();
   data = data.replace(/[^a-zA-Z ]/g, "");
@@ -31,11 +42,27 @@ fooditem = cleaningData(fooditem);
 fruits = cleaningData(fruits);
 insects = cleaningData(insects);
 animals = cleaningData(animals);
+seasons = cleaningData(seasons);
+countries = cleaningData(countries);
+random1 = cleaningData(random1);
+random2 = cleaningData(random2);
+random3 = cleaningData(random3);
+random4 = cleaningData(random4);
+random5 = cleaningData(random5);
+random6 = cleaningData(random6);
 data[0] = fruits;
 data[1] = fooditem;
 data[2] = vehicles;
 data[3] = insects;
 data[4] = animals;
+data[5] = seasons;
+data[6] = countries;
+data[7] = random1;
+data[8] = random2;
+data[9] = random3;
+data[10] = random4;
+data[11] = random5;
+data[12] = random6;
 
 var correct = document.getElementById("correct");
 var incorrect = document.getElementById("incorrect");
@@ -127,13 +154,13 @@ function actions() {
   function validate() {
     let answer = document.getElementById("answer");
     console.log(answer.value.length);
-    if (/*time.value > 0 && */ answer.value == mainWord) {
+    if ( /*time.value > 0 && */ answer.value == mainWord) {
       correct.play();
       scoreUp();
       answer.value = "";
       score.innerHTML = s;
 
-      if (count < 3) countUp();
+      if (count < 5) countUp();
       else {
         levelup();
         countReset();
