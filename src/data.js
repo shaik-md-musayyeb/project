@@ -107,7 +107,7 @@ function countUp() {
 }
 
 //function for timer
-var start = 60;
+var start = 6;
 var time = document.getElementById("timer");
 time.innerHTML = start;
 var interval = setInterval(() => {
@@ -196,7 +196,7 @@ function actions() {
   function validate() {
     let answer = document.getElementById("answer");
     console.log(answer.value.length);
-    if (/*time.value > 0 && */ answer.value == mainWord) {
+    if (time.innerHTML > 0 && answer.value == mainWord) {
       correct.play();
       scoreUp();
       answer.value = "";
@@ -207,7 +207,9 @@ function actions() {
         levelup();
         countReset();
       }
-      if (time.innerHTML > 0) actions();
+      answer.setAttribute("disabled", "disabled");
+      actions();
+    } else {
     }
   }
 }
