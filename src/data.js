@@ -107,7 +107,7 @@ function countUp() {
 }
 
 //function for timer
-var start = 60;
+var start = 300;
 var time = document.getElementById("timer");
 time.innerHTML = start;
 var interval = setInterval(() => {
@@ -207,7 +207,7 @@ function actions() {
       answer.value = "";
       score.innerHTML = s;
 
-      if (count < 6) countUp();
+      if (count < 3) countUp();
       else {
         levelup();
         countReset();
