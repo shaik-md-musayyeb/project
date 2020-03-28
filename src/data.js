@@ -175,23 +175,26 @@ function actions() {
   var mainWord = randomWord(data, level);
   console.log(mainWord);
   // time(mainWord);
-  var mainWordArray = mainWord.split("");
-  var mainWordArrayShuffled = shuffleArray(mainWordArray);
-  var shuffledWord = mainWordArrayShuffled.join("");
+  var mainWordArray = mainWord.split("");                   //turns the string into array
+
+  var mainWordArrayShuffled = shuffleArray(mainWordArray);  //shuffles the array (letters of words)
+
+  var shuffledWord = mainWordArrayShuffled.join("");        //array turns into array
+
   var length = mainWord.length;
   var hint1 = mainWord.substr(0, mainWord.length / 2 / 2);
   var hint2 = mainWord.substr(0, mainWord.length / 2);
-  var wordLength = document.getElementById("length");
-  wordLength.innerHTML = length;
+  var wordLength = document.getElementById("length");       //finds the length of the word
+  wordLength.innerHTML = length;                            //to set the length in game page
 
   var question = document.getElementById("question");
   question.innerHTML = shuffledWord;
 
   var answer = document.getElementById("answer");
-  answer.setAttribute("maxlength", length);
-  answer.setAttribute("placeholder", length + " letters");
-  answer.addEventListener("keyup", validate);
-  var score = document.getElementById("score");
+  answer.setAttribute("maxlength", length);                 //to set the length of user input
+  answer.setAttribute("placeholder", length + " letters");  // to set the value of place holder
+  answer.addEventListener("keyup", validate);               // call the validate method every time the key is up
+  var score = document.getElementById("score");       
 
   if (answer.value != mainWord && answer.value.length == mainWord.length) {
     incorrect.play();
@@ -202,24 +205,24 @@ function actions() {
     let answer = document.getElementById("answer");
     console.log(answer.value.length);
     if (answer.value == mainWord) {
-      correct.play();
-      scoreUp();
-      answer.value = "";
-      score.innerHTML = s;
+        correct.play();
+        scoreUp();
+        answer.value = "";
+        score.innerHTML = s;
 
-      if (count < 3) countUp();
-      else {
-        levelup();
-        countReset();
-      }
+        if (count < 3) countUp();
+        else {
+          levelup();
+          countReset();
+        }
 
-      actions();
+        actions();
     }
     // Result
     if (start == 0) {
-      answer.setAttribute("disabled", "disabled");
-      result.innerHTML = score.innerHTML;
-      document.getElementById("resultDiv").style.display = "block";
+        answer.setAttribute("disabled", "disabled");
+        result.innerHTML = score.innerHTML;
+        document.getElementById("resultDiv").style.display = "block";
     }
   }
 }

@@ -11,24 +11,31 @@
 
 <body>
   <div class="flex-container">
-    <div class="top">
-      <h1>It's a <span id="length"></span> letter word</h1>
-      <h1><span id="timer"></span>s</h1>
-    </div>
-    <div class="center">
-      <h1 id="question">Your word is</h1>
-    </div>
-    <div class="bottom">
-      <div class="hints" style="display:none">
-        <p>hint 1</p>
-        <p>hint 2</p>
+
+      <div class="top">
+          <h1>It's a <span id="length"></span> letter word</h1>
+          <h1><span id="timer"></span>s</h1>
       </div>
-      <input type="text" name="answer" id="answer" autofocus />
-      <h1>Score : <span id="score"> 0 </span></h1>
-    </div>
+
+      <div class="center">
+          <h1 id="question">Your word is</h1>
+      </div>
+
+      <div class="bottom">
+        <div class="hints" style="display:none">
+          <p>hint 1</p>
+          <p>hint 2</p>
+        </div>
+        
+        <!-- for user input -->
+        <input type="text" name="answer" id="answer" autofocus />
+        <h1>Score : <span id="score"> 0 </span></h1>
+      </div>
   </div>
+  <!-- sound clip for corrct answer -->
   <audio src="./assets/correct1.mp3" id="correct"></audio>
-  <audio src="./assets/incorrect.mp3" id="incorrect"></audio>
+
+    <!-- this div would be displayed when timer = 0 -->
   <div id="resultDiv" style="display:none">
     <p style="float:right; font-size : small;font-family: Arial, Helvetica, sans-serif;" id="close">X</p>
     <p id="pop">Your Score <br> <span id="result">13</span><br><br><span class="play"><a href="index.html">Play
