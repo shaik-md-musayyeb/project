@@ -24,8 +24,10 @@ function scoreUp() {
   ++s;
 }
 
-var count = 0;
+// The variable count is used for counting words, n letter words will be displayed upt *count* times max count is 4
+// i.e., The total number of four 3 letter words would be displayed, then four 4 letter words, then four 5 letter words and so on...
 
+var count = 0; 
 function countReset() {
   count = 0;
 }
@@ -52,7 +54,7 @@ function timer() {
   }
 }
 
-// function to shuffle letters in 'mainWordArray'
+// function to shuffle letters in 'mainWordAsArray'
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -62,11 +64,11 @@ function shuffleArray(array) {
   return array;
 }
 
-// shiffles the letters of mainWordArray
-// var mainWordArrayShuffled = shuffleArray(mainWordArray);
+// shiffles the letters of mainWordAsArray
+// var mainWordAsShuffledArray = shuffleArray(mainWordAsArray);
 
-//converts mainWordArrayShuffled to string
-// var shuffledWord = mainWordArrayShuffled.join("");
+//converts mainWordAsShuffledArray to string
+// var shuffledWord = mainWordAsShuffledArray.join("");
 // var length = mainWord.length;
 // var hint1 = mainWord.substr(0, mainWord.length / 2 / 2);
 // var hint2 = mainWord.substr(0, mainWord.length / 2);
@@ -75,11 +77,11 @@ actions();
 function actions() {
   var mainWord = randomWord(data, level);
   console.log(mainWord);
-  var mainWordArray = mainWord.split("");                   //turns the string into array
+  var mainWordAsArray = mainWord.split("");                   //turns the string into array
 
-  var mainWordArrayShuffled = shuffleArray(mainWordArray);  //shuffles the array (letters of words)
+  var mainWordAsShuffledArray = shuffleArray(mainWordAsArray);  //shuffles the array (letters of words)
 
-  var shuffledWord = mainWordArrayShuffled.join("");        //array turns into array
+  var shuffledWord = mainWordAsShuffledArray.join("");        //array turns into array
 
   var length = mainWord.length;
   var hint1 = mainWord.substr(0, mainWord.length / 2 / 2);
@@ -110,7 +112,7 @@ function actions() {
         answer.value = "";
         score.innerHTML = s;
 
-        if (count < 3) countUp();
+        if (count < 3) {console.log("count = "+count);countUp();}
         else {
           levelup();
           countReset();

@@ -22,10 +22,11 @@
       </div>
 
       <div class="bottom">
-        <div class="hints" style="display:none">
+        <!-- In future make use of hints as update -->
+        <!-- <div class="hints" style="display:none">
           <p>hint 1</p>
           <p>hint 2</p>
-        </div>
+        </div> -->
         
         <!-- for user input -->
         <input type="text" name="answer" id="answer" autofocus />
@@ -35,7 +36,7 @@
   <!-- sound clip for corrct answer -->
   <audio src="./assets/correct1.mp3" id="correct"></audio>
 
-    <!-- this div would be displayed when timer = 0 -->
+    <!-- this div would be displayed when timer becomes zero and user still tries to input his answer -->
   <div id="resultDiv" style="display:none">
     <p style="float:right; font-size : small;font-family: Arial, Helvetica, sans-serif;" id="close">X</p>
     <p id="pop">Your Score <br> <span id="result">13</span><br><br><span class="play"><a href="index.html">Play
